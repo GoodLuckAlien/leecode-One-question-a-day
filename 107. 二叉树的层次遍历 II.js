@@ -1,0 +1,50 @@
+/**
+ * 107. 二叉树的层次遍历 II
+给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
+
+例如：
+给定二叉树 [3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回其自底向上的层次遍历为：
+
+[
+  [15,7],
+  [9,20],
+  [3]
+]
+ */
+
+ /**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrderBottom = function(root) {
+    const result = []
+    if(!root) return result
+    const stack = []
+    stack.push( root )
+    while(stack.length > 0){
+        let length = stack.length -1
+        result.unshift([])
+        for(let i=0;i <= length;i++){
+            const current = stack.shift()
+            if(!current) break
+            if(current.val!==null) result[0].push(current.val)
+            if(current.left) stack.push(current.left)
+            if(current.right) stack.push(current.right)
+        }
+    }
+    return result
+};
