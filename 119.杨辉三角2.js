@@ -19,7 +19,6 @@
  */
 var getRow = function(rowIndex) {
     let result = []
-
     result.push(1)
     if(rowIndex === 0){
         return result
@@ -32,7 +31,6 @@ var getRow = function(rowIndex) {
         col.push(1)
         result = col
     }
-
     return result
  };
 
