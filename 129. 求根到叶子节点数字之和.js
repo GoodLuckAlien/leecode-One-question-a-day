@@ -54,8 +54,8 @@ var sumNumbers = function(root) {
           totalNumber += Number( curNum + curNode.val )
           return
       }
-      if(curNode.left) back(curNode.left,  curNum + curNode.val )
-      if(curNode.right) back(curNode.right,curNum + curNode.val  )
+      if(curNode.left)  back(curNode.left, curNum + curNode.val )
+      if(curNode.right) back(curNode.right,curNum + curNode.val )
    }
    if(root.left) back(root.left,root.val)
    if(root.right) back(root.right,root.val)
